@@ -1,0 +1,20 @@
+
+Install docker: https://docs.docker.com/engine/install/
+
+Launch Docker Desktop if you use MacOS or Windows. 
+In Linux without GUI (Graphical User Interface), write this command: "systemctl --user start docker-desktop"
+Link to a help page for Linux: https://docs.docker.com/desktop/install/ubuntu/.
+Don't hesitate to make a research in docker help or use google to search your errors.
+
+Go to the repository The-Seven-Bastards
+Open a terminal and launch this command: "docker compose up -d"
+This command launch the container contain the SQL database.
+
+Connect to the database (use a IDE like DataGrip):
+
+user : root
+password: <nothing>
+ip: localhost
+
+Then you can use a first script to create the database with all table (need to complete this sql script): ./server/src/database/1_init.sql 
+To add data in a table use this sql script: ./server/src/database/2_data.sql
