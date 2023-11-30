@@ -97,7 +97,9 @@ CREATE TABLE evaluation(
     note INTEGER,
     date_evaluation DATE,
     evaluateur INTEGER,
-    FOREIGN KEY (evaluateur) REFERENCES evaluateur(id)
+    dessin INTEGER,
+    FOREIGN KEY (evaluateur) REFERENCES evaluateur(id),
+    FOREIGN KEY (dessin) REFERENCES dessin(id)
 );
 
 ALTER TABLE utilisateur
