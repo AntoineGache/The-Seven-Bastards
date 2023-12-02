@@ -6,18 +6,22 @@
 
 use sevenBastards;
 
+SET foreign_key_checks = 0;
 DROP TABLE IF EXISTS administrateur;
-ALTER TABLE club
-    DROP FOREIGN KEY club_ibfk_1;
-DROP TABLE IF EXISTS concours;
-DROP TABLE IF EXISTS dessin;
-DROP TABLE IF EXISTS competiteur;
 DROP TABLE IF EXISTS directeur;
 DROP TABLE IF EXISTS evaluation;
+DROP TABLE IF EXISTS dessin;
+DROP TABLE IF EXISTS competiteur;
 DROP TABLE IF EXISTS evaluateur;
+DROP TABLE IF EXISTS jury;
+DROP TABLE IF EXISTS concours;
+DROP TABLE IF EXISTS membre_jury;
+DROP TABLE IF EXISTS participants;
 DROP TABLE IF EXISTS president;
 DROP TABLE IF EXISTS utilisateur;
 DROP TABLE IF EXISTS club;
+SET foreign_key_checks = 1;
+
 
 CREATE TABLE utilisateur(
     id INTEGER PRIMARY KEY,
@@ -96,10 +100,28 @@ CREATE TABLE evaluation(
     commentaire VARCHAR(500),
     note INTEGER,
     date_evaluation DATE,
-    evaluateur INTEGER,
     dessin INTEGER,
-    FOREIGN KEY (evaluateur) REFERENCES evaluateur(id),
-    FOREIGN KEY (dessin) REFERENCES dessin(id)
+    evaluateur INTEGER,
+    FOREIGN KEY (dessin) REFERENCES dessin(id),
+    FOREIGN KEY (evaluateur) REFERENCES evaluateur(id)
+);
+
+CREATE TABLE jury(
+    id INTEGER PRIMARY KEY,
+    concours INTEGER,
+    FOREIGN KEY (concours) REFERENCES concours(id)
+);
+
+CREATE TABLE membre_jury(
+    evaluateur INTEGER,
+    jury INTEGER,
+    PRIMARY KEY(evaluateur, jury)
+);
+
+CREATE TABLE participants(
+    competieur INTEGER,
+    concours INTEGER,
+    PRIMARY KEY(competieur, concours)
 );
 
 ALTER TABLE utilisateur
