@@ -2,4 +2,4 @@
 /dist
 
 #File
-package-lock.json
+/package-lock.json
