@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Page de connexion</title>
+        <link href="../CSS/connexion.css" type="text/css" rel="stylesheet"/>
+        <script src="../JS/connexion.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    </head>
+    <body>
+        <header>
+            <div id="logo">
+                <img src="../image/LogoSite.png" >
+            </div>
+
+        </header>
+        <div id="fenetre_de_connexion">
+            <img src="../image/User.png" >
+            <div class="case">
+                <form id="loginForm">
+                    <label for="identifiant"><strong>Entrer votre identifiant : </strong></strong><br></label>
+                    <input type="text" id="identifiant" >
+                    <label for="motDePasse"><br><strong>Entrer votre mot de passe :</strong> <br></label>
+                    <input type="text" id="motDePasse" >
+                    <button id="valider" onclick="requeteIdentification()"><strong>valider</strong></button>
+                </form>
+            </div>
+
+        </div>
+    </body>
+</html>
