@@ -1,0 +1,57 @@
+#fenetre_de_connexion {
+    margin-top: 100px;
+    margin-left: 30%;
+    width: 40%;
+    text-align: center;
+
+}
+
+#fenetre_de_connexion img{
+    margin: 0 auto;
+    width: auto;
+    height: 150px;
+}
+
+.case {
+    top: 0;
+    width: auto;
+    height: auto;
+    margin: 0 auto;
+    text-align:center;
+    line-height: 80px;
+    border: solid;
+    border-color: #36322E;
+    box-shadow: 8px 8px #36322E;
+    border-width: 5px;
+    font-size: 3cqb;
+    background: #716F65;
+
+
+}
+label{
+    color: white;
+}
+#identifiant, #motDePasse{
+    font-size: 3cqb;
+    width: 50%;
+    color: white;
+    background: dimgray;
+    border-radius: 7px;
+}
+input::placeholder{
+    color: white;
+}
+#valider{
+    border-radius: 7px;
+    font-size: 3cqb;
+    border: solid;
+    border-color: white;
+    color: white;
+    border-width: 5px;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#valider:active {
+    background-color: #c0c0c0;
+}
