@@ -1,0 +1,42 @@
+@charset "ISO-8859-1";
+
+#partieD{
+    background: transparent;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 31%;
+    position: absolute;
+}
+#profil{
+    background: #36322E;
+    height: 100%;
+    width: 65%;
+    float: left;
+
+}
+#profil img{
+    height: 95%;
+    width: auto;
+    float: left;
+    margin-left: 4%;
+
+}
+#ecritureProfil{
+    float: right;
+    color:white ;
+    padding-right: 15px;
+    padding-top: 10%;
+    text-align: right;
+}
+#slogan{
+    background: transparent;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 32%;
+    float: left;
+    text-align: right;
+    padding-right: 3%;
+    color:white ;
+}
