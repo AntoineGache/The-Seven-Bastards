@@ -5,8 +5,8 @@
   "source": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx parcel src/index.html",
-    "build": "npx parcel build src/index.html"
+    "dev": "npx parcel src/*.html",
+    "build": "npx parcel build src/*.html"
   },
   "keywords": [],
   "author": "",

@@ -1,3 +1,4 @@
+import { authAPI } from '../../services/authAPI';
 
 // Fonction pour la connexion
 
@@ -7,15 +8,16 @@
 function requeteIdentification() {
     var identifiant = document.getElementById("identifiant").value
     var mdp = document.getElementById("motDePasse").value
+
+    const data = { identifiant: identifiant, mdp: mdp }
     
-    $.post('http://localhost:3000/connection.html', { identifiant: identifiant, mdp: mdp }, (data) => {       
-        
-    if (data.success) {    
-           window.location.href = '/index.html'; // redirection
-           alert('success'); // faudra voir pour les cookies ou pour les login etc
-        } else {
-            alert('Identifiant ou mot de passe incorrect.');
-        }
+    authAPI.signIn(data).then(res => {
+        if (res.success) {    
+            window.location.href = '/index.html'; // redirection
+            alert('success'); // faudra voir pour les cookies ou pour les login etc
+         } else {
+             alert('Identifiant ou mot de passe incorrect.');
+         }
     });
 }
 
