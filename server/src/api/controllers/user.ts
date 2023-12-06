@@ -1,7 +1,12 @@
 import {NextFunction, Request, Response} from 'express';
 
 
-var mysql = require('../../app');
+export const mysql = require('../../app');
+
+export type loginData {
+	identifiant: string,
+	password: string
+}
 
 
 export const register = async (req: Request, res: Response, next: NextFunction) => {

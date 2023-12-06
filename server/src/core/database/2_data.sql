@@ -1,3 +1,4 @@
+use sevenBastards;
 -- Insérer des données dans la table Utilisateur
 INSERT INTO utilisateur (id, nom, prenom, adresse, login, password, date_licence, club)
 VALUES
