@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS evaluateur;
 DROP TABLE IF EXISTS jury;
 DROP TABLE IF EXISTS concours;
 DROP TABLE IF EXISTS membre_jury;
-DROP TABLE IF EXISTS participants;
+DROP TABLE IF EXISTS participation;
 DROP TABLE IF EXISTS president;
 DROP TABLE IF EXISTS utilisateur;
 DROP TABLE IF EXISTS club;
@@ -74,16 +74,6 @@ CREATE TABLE club(
     FOREIGN KEY (directeur) REFERENCES directeur(id)
 );
 
-CREATE TABLE dessin(
-    id INTEGER PRIMARY KEY,
-    commentaire VARCHAR(500),
-    classement INTEGER,
-    date_remise DATE,
-    lien VARCHAR(200),
-    competiteur INTEGER,
-    FOREIGN KEY (competiteur) REFERENCES competiteur(id)
-);
-
 CREATE TABLE concours(
     id INTEGER PRIMARY KEY,
     theme VARCHAR(100),
@@ -93,6 +83,16 @@ CREATE TABLE concours(
     etat VARCHAR(100),
     president INTEGER,
     FOREIGN KEY (president) REFERENCES president(id)
+);
+
+CREATE TABLE dessin(
+    id INTEGER PRIMARY KEY,
+    commentaire VARCHAR(500),
+    classement INTEGER,
+    date_remise DATE,
+    lien VARCHAR(200),
+    competiteur INTEGER,
+    FOREIGN KEY (competiteur) REFERENCES competiteur(id)
 );
 
 CREATE TABLE evaluation(
@@ -118,10 +118,13 @@ CREATE TABLE membre_jury(
     PRIMARY KEY(evaluateur, jury)
 );
 
-CREATE TABLE participants(
-    competieur INTEGER,
+CREATE TABLE participation(
+    competiteur INTEGER,
     concours INTEGER,
-    PRIMARY KEY(competieur, concours)
+    date_inscription DATE,
+    dessin INTEGER,
+    PRIMARY KEY(competiteur, concours),
+    FOREIGN KEY (dessin) REFERENCES dessin(id)
 );
 
 ALTER TABLE utilisateur
