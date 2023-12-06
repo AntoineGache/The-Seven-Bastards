@@ -9,7 +9,7 @@ function requeteIdentification() {
     var identifiant = document.getElementById("identifiant").value
     var mdp = document.getElementById("motDePasse").value
 
-    const data = { identifiant: identifiant, mdp: mdp }
+    const data = {identifiant: identifiant, mdp: mdp } 
     
     authAPI.signIn(data).then(res => {
         if (res.success) {    

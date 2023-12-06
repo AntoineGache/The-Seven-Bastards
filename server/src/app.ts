@@ -19,15 +19,20 @@ app.use("/", router);
 const mysql = require('mysql2');
 
 try {
-    const connection = mysql.createConnection({
+      const connexion = mysql.createConnection({
         host: `${process.env.MYSQL_HOST}`,
         user: `${process.env.MYSQL_USER}`,
         password: `${process.env.MYSQL_PASSWORD}`,
         database: `${process.env.MYSQL_DATABASE}`,
         port: `${process.env.MYSQL_PORT}`
       })
-    
-      console.log("Data base: Connexion Success !")
+      
+      connexion.connect(function(err: any) {
+        if (err) throw err;
+        console.log("Data base: Connexion Success !")
+      });
+
+      module.exports = connexion;
 
       app.listen(process.env.BACK_PORT, () => {
         console.log("server running : http://localhost:8080");
