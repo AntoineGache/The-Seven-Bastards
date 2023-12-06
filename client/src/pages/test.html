@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Button</title>
+    <style>
+        #hiddenButton {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<button id="showButton" onclick="toggleButton()">Afficher le bouton</button>
+
+<button id="hiddenButton">Bouton caché</button>
+
+<script>
+    function toggleButton() {
+        // Récupérer les références des boutons
+        var showButton = document.getElementById('showButton');
+        var hiddenButton = document.getElementById('hiddenButton');
+
+        // Vérifier l'état actuel du bouton caché
+        if (hiddenButton.style.display === 'none') {
+            // Afficher le bouton caché
+            hiddenButton.style.display = 'block';
+        } else {
+            // Masquer le bouton caché
+            hiddenButton.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>

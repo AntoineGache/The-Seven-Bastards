@@ -13,8 +13,9 @@ This command launch the container contain the SQL database.
 Connect to the database (use a IDE like DataGrip):
 
 user : root
-password: <nothing>
+password: root_password
 ip: localhost
+port: 6000
 
 Then you can use a first script to create the database with all table (need to complete this sql script): ./server/src/database/1_init.sql 
 To add data in a table use this sql script: ./server/src/database/2_data.sql
