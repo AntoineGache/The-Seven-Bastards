@@ -116,15 +116,15 @@ VALUES
     (9, 6);
 
 -- Insérer des données dans la table Participants
-INSERT INTO participants (competiteur, concours)
+INSERT INTO participation (competiteur, concours, date_inscription, dessin)
 VALUES
-    (1, 1),
-    (3, 2),
-    (4, 1),
-    (6, 3),
-    (7, 4),
-    (9, 5),
-    (10, 6);
+    (1, 1, CURRENT_DATE, 1),
+    (3, 2, CURRENT_DATE, 2),
+    (4, 1, CURRENT_DATE, 3),
+    (6, 3, CURRENT_DATE, 4),
+    (7, 4, CURRENT_DATE, 5),
+    (9, 5, CURRENT_DATE, 6),
+    (10, 6, CURRENT_DATE, NULL);
 
 -- Mettre à jour les clés étrangères dans la table Utilisateur
 UPDATE utilisateur SET club = 1 WHERE id IN (1, 4, 9);
