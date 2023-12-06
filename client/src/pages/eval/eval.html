@@ -1,30 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8"/>
-    <title>Un titre</title>
-    <link rel="7S" href="eval.css">
+    <title>7S</title>
+    <link rel="stylesheet" type="text/css" href="eval.css">
+    <script src="eval.js"></script>
   </head>
   <body>
     <!--Séparation de la page-->
     <header>
-        <img src="..\..\..\Image\Logo site v1.0.png" alt="Logo">
+      <div class="logo">
+        <img src="..\..\images\Logo site v1.0.png" alt="Logo">
+      </div>
     </header>
-    <nav>
-    </nav>
-    <main>
-      <h1>Liste des Concours</h1>
-      <!--Trouver qqchose pour faire des encadrés pour les concours-->
-      <button>Evaluer</button>
-    </main>
-    <aside>
-      <h1>Concours à venir</h1>
-    </aside>
+    <div class="main-container">
+      <aside>
+        <h1>Concours à venir</h1>
+      </aside>
+      <main>
+        <h1>Liste des Concours</h1>
+        <!--Trouver qqchose pour faire des encadrés pour les concours-->
+          <div class="concours">
+            <!--Récupération des infos du concours-->
+            <button>Evaluer</button>
+          </div>
+      </main>
+    </div>
     <footer>
-      <img class="img-footer" src="..\..\..\Image\logo instagram transparent background.png" alt="instagram">
-      <img class="img-footer" src="..\..\..\Image\logo facebook blanc transparent background.png" alt="facebook">
-      <img class="img-footer" src="..\..\..\Image\logo X transparent background.png" alt="X">
-      <img class="img-footer" src="..\..\..\Image\logo linkedin transparent background.png" alt="linkedin">
+      <div class="social">
+        <img class="img-footer" src="..\..\images\logo instagram transparent background.png" alt="instagram">
+        <img class="img-footer" src="..\..\images\logo facebook blanc transparent background.png" alt="facebook">
+        <img class="img-footer" src="..\..\images\logo X transparent background.png" alt="X">
+        <img class="img-footer" src="..\..\images\logo linkedin transparent background.png" alt="linkedin">
+      </div>
       <p>The 7 Bastards Art Contests Creators</p>
     </footer>
     <script type="module" src="app.ts"></script>
