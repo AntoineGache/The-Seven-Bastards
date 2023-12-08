@@ -27,6 +27,7 @@ CREATE TABLE utilisateur(
     id INTEGER PRIMARY KEY,
     nom VARCHAR(50),
     prenom VARCHAR(50),
+    age INTEGER,
     adresse VARCHAR(100),
     login VARCHAR(50),
     password VARCHAR(64), #SHA256
@@ -115,7 +116,9 @@ CREATE TABLE jury(
 CREATE TABLE membre_jury(
     evaluateur INTEGER,
     jury INTEGER,
-    PRIMARY KEY(evaluateur, jury)
+    PRIMARY KEY(evaluateur, jury),
+    FOREIGN KEY (evaluateur) REFERENCES evaluateur(id),
+    FOREIGN KEY (jury) REFERENCES jury(id)
 );
 
 CREATE TABLE participation(
