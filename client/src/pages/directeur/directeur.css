@@ -116,6 +116,7 @@ nav > ul > li > a {
     text-decoration: none;
     color: #36322E;
     font-size: 3cqb;
+    color: #36322E;
 }
 
 .menu-deroulant > a:after {
@@ -149,8 +150,24 @@ nav > ul > li:hover > a {
 }
 
 .menu-deroulant:hover > .sous-menu {
+    display: block;
     animation: apparitionSousMenu 1s forwards;
 }
+#etat{
+    top: 14%;
+    right: 10%;
+    font-size: 3cqb;
+    color: green;
+    position: absolute;
+}
+#ID{
+    top: 14%;
+    right: 50%;
+    font-size: 3cqb;
+    color: black;
+    position: absolute;
+}
+
 
 .sous-menu > a {
     display: flex;
@@ -168,14 +185,50 @@ nav > ul > li:hover > a {
 }
 
 .sous-menu {
+    display: none;
     overflow: hidden;
     max-height: 0;
-    height: 1500px;
+    height: 700px;
     width: 100%;
 }
+#description{
+    overflow: hidden;
+    height: 10%;
+    width: 80%;
+    top: 10%;
+    left: 10%;
+    position: absolute;
+}
+#date{
+    margin-left: 3%;
+    height: auto;
+    width: 50%;
+    top: 20%;
+    left: 0;
+    position: absolute;
+}
+#date > .pP{
+    padding-left: 6%;
+}
+#date > .pG{
+    font-size: 25px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+#participant{
+    text-align: center;
+    height: auto;
+    width: 50%;
+    top: 20%;
+    right: 0;
+    position: absolute;
+}
+table {
+    text-align: left;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
 
-
-
-
-
-
+td,th {
+    border: 3px solid black;
+}
