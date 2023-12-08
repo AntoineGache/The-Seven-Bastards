@@ -16,11 +16,11 @@ VALUES
 INSERT INTO competiteur (id, date_premiere_participation)
 VALUES
     (1, '2022-01-15'),
-    (3, '2022-03-15'),
+    (3, '2021-03-15'),
     (4, '2022-02-01'),
-    (6, '2022-01-01'),
+    (6, '2021-01-01'),
     (7, '2022-01-10'),
-    (9, '2022-03-05'),
+    (9, '2021-03-05'),
     (10, '2022-01-25');
 
 -- Insérer des données dans la table President
@@ -73,7 +73,7 @@ VALUES
     (3, 'Abstractions Modernes', 'Laissez libre cours à votre créativité avec des œuvres abstraites', '2022-06-01', '2022-06-15', 'non commencé', 4),
     (4, 'Imaginaire Numérique', 'Explorez des mondes imaginaires à travers l\'art numérique', '2022-03-10', '2022-03-25', 'évalué', 4),
     (5, 'Réalistes Inspirés', 'Reproduisez des scènes réalistes inspirées de la vie quotidienne', '2022-02-05', '2022-02-20', 'en cours', 5),
-    (6, 'Surréalisme Moderne', 'Créez des œuvres surréalistes avec une touche contemporaine', '2022-01-20', '2022-02-04', 'évalué', 5);
+    (6, 'Surréalisme Moderne', 'Créez des œuvres surréalistes avec une touche contemporaine', '2021-01-20', '2021-02-04', 'évalué', 5);
 
 -- Insérer des données dans la table Dessin
 INSERT INTO dessin (id, commentaire, classement, date_remise, lien, competiteur)
@@ -115,10 +115,15 @@ VALUES
     (8, 5),
     (9, 6);
 
--- Insérer des données dans la table Participants
+-- Insérer des données dans la table Participation
 INSERT INTO participation (competiteur, concours, date_inscription, dessin)
 VALUES
     (1, 1, CURRENT_DATE, 1),
+    (1,2,CURRENT_DATE, 1),
+    (1,3,CURRENT_DATE, 1),
+    (1,4,CURRENT_DATE, 1),
+    (1,5,CURRENT_DATE, 1),
+    (1,6,CURRENT_DATE, 1),
     (3, 2, CURRENT_DATE, 2),
     (4, 1, CURRENT_DATE, 3),
     (6, 3, CURRENT_DATE, 4),
