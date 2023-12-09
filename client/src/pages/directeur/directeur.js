@@ -13,7 +13,11 @@ window.onload =function () {
     ];
     creerTableau(donnees);
 }
-
+document.addEventListener('click', function(even){
+    if (even.target.id==='inscription'){
+        inscription();
+    }
+});
 function listeConcours(elements){
     var listeContainer = document.getElementById("liste-container");
     var ul = document.createElement("ul");

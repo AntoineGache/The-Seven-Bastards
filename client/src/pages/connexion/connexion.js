@@ -2,7 +2,11 @@ import { authAPI } from '../../services/authAPI';
 
 // Fonction pour la connexion
 // requete POST  pour verifier les credentials
-alert("maman2")
+document.addEventListener('click', function(even){
+    if (even.target.id==='valider'){
+        requeteIdentification();
+    }
+});
 function requeteIdentification() {
 
     alert("maman")

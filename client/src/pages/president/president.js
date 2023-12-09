@@ -12,20 +12,15 @@ window.onload =function () {
     ];
     creerTableau(donnees);
 }
-function inscription() {
-    /*chatgtp*/
-    // Récupérer les références des boutons
-    var showButton = document.getElementById('inscription');
-    // Vérifier l'état actuel du bouton caché
-    if (showButton.style.display === 'none') {
-        // Afficher le bouton caché
-        showButton.style.display = 'block';
-    } else {
-        // Masquer le bouton caché
-        showButton.style.display = 'none';
+document.addEventListener('click', function(even){
+    if (even.target.id==='attribuer'){
+        attribuer();
     }
-    /**/
-}
+    if (even.target.id==='voir'){
+        voir();
+    }
+
+});
 
 
 function listeConcours(elements){

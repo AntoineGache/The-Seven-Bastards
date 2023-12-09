@@ -3,7 +3,12 @@ var elements2 = ["Élément1", "Élément 2", "Élément 3", "Élément 4", "Él
 remplirFormulaireJury(elements, elements2);
 
 document.addEventListener('click', function(event) {
-    changerDeCollone(event.target);
+    if (event.target.tagName === 'P') {
+        changerDeCollone(event.target);
+    }
+    if (event.target.id === 'attribuer') {
+        attribuer();
+    }
 });
 
 function attribuer(){
