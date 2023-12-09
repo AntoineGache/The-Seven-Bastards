@@ -4,7 +4,6 @@ window.onload =function () {
     remplirLabel(document.getElementById('etat'), 'ETAT!');
     remplirLabel(document.getElementById('dateD'), '00/00/0000');
     remplirLabel(document.getElementById('dateF'), '00/00/0000');
-
 //donne de la bdd
     var donnees = [
         { nom: 'John', age: 30, ville: 'New York' },
@@ -13,6 +12,21 @@ window.onload =function () {
     ];
     creerTableau(donnees);
 }
+function inscription() {
+    /*chatgtp*/
+    // Récupérer les références des boutons
+    var showButton = document.getElementById('inscription');
+    // Vérifier l'état actuel du bouton caché
+    if (showButton.style.display === 'none') {
+        // Afficher le bouton caché
+        showButton.style.display = 'block';
+    } else {
+        // Masquer le bouton caché
+        showButton.style.display = 'none';
+    }
+    /**/
+}
+
 
 function listeConcours(elements){
     var listeContainer = document.getElementById("liste-container");
@@ -29,7 +43,6 @@ function listeConcours(elements){
 function remplirLabel(label, nouvelleValeur) {
     label.textContent = nouvelleValeur;
 }
-
 
 
 function creerTableau(tableauDeValeur) {
@@ -52,20 +65,9 @@ function creerTableau(tableauDeValeur) {
     var participant = document.getElementById('participant');
     participant.appendChild(tableau);
 }
-
-function inscription() {
-    /*chatgtp*/
-    // Récupérer les références des boutons
-    var showButton = document.getElementById('inscription');
-    // Vérifier l'état actuel du bouton caché
-    if (showButton.style.display === 'none') {
-        // Afficher le bouton caché
-        showButton.style.display = 'block';
-    } else {
-        // Masquer le bouton caché
-        showButton.style.display = 'none';
-    }
-    /**/
+function attribuer(){
+    window.location.href = "../attribuer/attribuer.html";
 }
-
-
+function voir(){
+    window.location.href = "president.html";
+}
