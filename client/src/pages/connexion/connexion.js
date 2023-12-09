@@ -8,7 +8,14 @@ btnE1.addEventListener('click', requeteIdentification);
 
 // Fonction pour la connexion
 // requete POST  pour verifier les credentials
+document.addEventListener('click', function(even){
+    if (even.target.id==='valider'){
+        requeteIdentification();
+    }
+});
 function requeteIdentification() {
+
+    alert("maman")
     var identifiant = document.getElementById("identifiant").value
     var mdp = document.getElementById("motDePasse").value
     const data = {identifiant: identifiant, mdp: mdp } 

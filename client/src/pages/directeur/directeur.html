@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="directeur.css" type="text/css" rel="stylesheet"/>
         <link href="../style.css" type="text/css" rel="stylesheet"/>
-        <script src="directeur.js"></script>
+        <script type="module" src="directeur.js" defer></script>
         <title>acceuil directeur</title>
     </head>
     <body>
@@ -22,7 +22,6 @@
                 </div>
                 <div id="profil">
                     <img src="../../image/User.png">
-
                     <div id="ecritureProfil">
                         <h2>Info Profil</h2>
                         <h2><strong>DIRECTEUR</strong></h2>
@@ -33,21 +32,36 @@
         <div id="contenueCentrale">
             <div id="contenueCentraleG">
                 <h2>concours à venir</h2>
-                <label>"concours a venir"</label>
+                <div id="liste-container"></div>
             </div>
             <div id="contenueCentraleD">
                 <nav id = "contenueConcours">
                     <ul>
                         <li class="menu-deroulant">
-                            <a href="#">menu      </a>
+                            <a><strong>Concours</strong>      </a>
                             <ul class="sous-menu">
-                                <div id="idConcours"></div>
+                                <div id="idConcours">
+                                    <p id="description"></p>
+                                    <div id="date">
+                                        <p class="pG">Date de début :</p>
+                                        <p class="pP" id="dateD"></p>
+                                        <p class="pG">Date de fin :</p>
+                                        <p class="pP" id="dateF"></p>
+                                    </div>
+                                    <div id="participant">
+                                        <!-- mettre le tableau -->
+                                    </div>
+                                </div>
                             </ul>
                         </li>
                     </ul>
+                    <p id="etat">ETAT</p>
+                    <p id="ID">ID</p>
                 </nav>
 
-                <button id="inscription" onclick=toggleButton()><strong>inscription</strong></button>
+
+
+                <button id="inscription" ><strong>inscription</strong></button>
             </div>
         </div>
         <footer>

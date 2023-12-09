@@ -1,0 +1,107 @@
+@charset "ISO-8859-1";
+
+#partieD {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 31%;
+    height: 100%;
+    background: transparent;
+}
+
+#profil {
+    float: left;
+    width: 65%;
+    height: 100%;
+    background: #36322E;
+}
+
+#profil img {
+    float: left;
+    width: auto;
+    height: 95%;
+    margin-left: 4%;
+}
+
+#ecritureProfil {
+    float: right;
+    text-align: right;
+    color: white;
+    padding-right: 15px;
+    padding-top: 10%;
+}
+
+#slogan {
+    float: left;
+    width: 32%;
+    height: 100%;
+    background: transparent;
+    text-align: right;
+    padding-right: 3%;
+    color: white;
+}
+#Centrale {
+    position: absolute;
+    top: 25%;
+    left: 0;
+    width: 90%;
+    height: 65%;
+    background: #FAEFE6;
+    margin-left: 5%;
+
+}
+
+#gauche {
+    top: 10%;
+    left: 0;
+    margin-left: 2%;
+    position: absolute;
+    background: #FAEFE6;
+    width: 30%;
+    height: auto;
+    padding-bottom: 50px;
+    border: 5px solid #36322E;
+    color: #36322E;
+    box-shadow: 4px 4px #36322E;
+}
+#droite {
+    top: 10%;
+    left: 40%;
+    position: absolute;
+    background: #FAEFE6;
+    width: 30%;
+    height: auto;
+    padding-bottom: 50px;
+    border: 5px solid #36322E;
+    color: #36322E;
+    box-shadow: 4px 4px #36322E;
+}
+.button {
+    position: absolute;
+    right:  0;
+    bottom: 0;
+    margin-right: 5%;
+    margin-bottom: 3%;
+    font-size: 3cqb;
+    border: 5px solid #36322E;
+    color: #36322E;
+    transition: background-color 0.3s;
+    box-shadow: 4px 4px #36322E;
+}
+
+.button:active {
+    background-color: #c0c0c0;
+}
+#Centrale > div > p {
+    margin-left: 10%;
+    font-size: 3cqb;
+    color: #36322E;
+}
+
+
+
+
+
+
+
+

@@ -59,7 +59,7 @@
     text-align: center;
 }
 
-#inscription {
+.button {
     margin-left: 10%;
     margin-top: 1%;
     font-size: 3cqb;
@@ -70,7 +70,7 @@
     box-shadow: 4px 4px #36322E;
 }
 
-#inscription:active {
+.button:active {
     background-color: #c0c0c0;
 }
 
