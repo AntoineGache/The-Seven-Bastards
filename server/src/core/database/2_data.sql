@@ -1,17 +1,17 @@
 use sevenBastards;
 -- Insérer des données dans la table Utilisateur
-INSERT INTO utilisateur (id, nom, prenom, adresse, login, password, date_licence, club)
+INSERT INTO utilisateur (id, nom, prenom, age, adresse, login, password, date_licence, club)
 VALUES
-    (1, 'Durand', 'Pierre', '10 Rue de l\'Artiste', 'pierre.durand', 'MotDePasse1', '2022-01-01', NULL),
-    (2, 'Dupont', 'Sophie', '20 Avenue Crayon', 'sophie.dupont', 'MotDePasse2', '2022-02-01', NULL),
-    (3, 'Martin', 'Thomas', '30 Boulevard Toile', 'thomas.martin', 'MotDePasse3', '2022-03-01', NULL),
-    (4, 'Lefevre', 'Marie', '40 Rue des Peintres', 'marie.lefevre', 'MotDePasse4', '2022-01-15', NULL),
-    (5, 'Leroy', 'Julien', '50 Avenue des Arts', 'julien.leroy', 'MotDePasse5', '2022-02-15', NULL),
-    (6, 'Dufour', 'Claire', '60 Boulevard Palette', 'claire.dufour', 'MotDePasse6', '2022-03-15', NULL),
-    (7, 'Garcia', 'Isabella', '70 Chemin des Créateurs', 'isabella.garcia', 'MotDePasse7', '2022-01-10', NULL),
-    (8, 'Muller', 'Lucas', '80 Avenue Imagination', 'lucas.muller', 'MotDePasse8', '2022-02-20', NULL),
-    (9, 'Boucher', 'Élise', '90 Rue des Inspirations', 'elise.boucher', 'MotDePasse9', '2022-03-05', NULL),
-    (10, 'Renard', 'Alexandre', '100 Avenue Artiste', 'alexandre.renard', 'MotDePasse10', '2022-01-25', NULL);
+    (1, 'Durand', 'Pierre', 18, '10 Rue de l\'Artiste', 'pierre.durand', 'MotDePasse1', '2022-01-01', NULL),
+    (2, 'Dupont', 'Sophie', 21, '20 Avenue Crayon', 'sophie.dupont', 'MotDePasse2', '2022-02-01', NULL),
+    (3, 'Martin', 'Thomas', 26, '30 Boulevard Toile', 'thomas.martin', 'MotDePasse3', '2022-03-01', NULL),
+    (4, 'Lefevre', 'Marie', 14, '40 Rue des Peintres', 'marie.lefevre', 'MotDePasse4', '2022-01-15', NULL),
+    (5, 'Leroy', 'Julien', 23, '50 Avenue des Arts', 'julien.leroy', 'MotDePasse5', '2022-02-15', NULL),
+    (6, 'Dufour', 'Claire', 29, '60 Boulevard Palette', 'claire.dufour', 'MotDePasse6', '2022-03-15', NULL),
+    (7, 'Garcia', 'Isabella', 34, '70 Chemin des Créateurs', 'isabella.garcia', 'MotDePasse7', '2022-01-10', NULL),
+    (8, 'Muller', 'Lucas', 31, '80 Avenue Imagination', 'lucas.muller', 'MotDePasse8', '2022-02-20', NULL),
+    (9, 'Boucher', 'Élise', 28, '90 Rue des Inspirations', 'elise.boucher', 'MotDePasse9', '2022-03-05', NULL),
+    (10, 'Renard', 'Alexandre', 17, '100 Avenue Artiste', 'alexandre.renard', 'MotDePasse10', '2022-01-25', NULL);
 
 -- Insérer des données dans la table Competiteur
 INSERT INTO competiteur (id, date_premiere_participation)
