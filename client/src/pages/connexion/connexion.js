@@ -1,4 +1,10 @@
-import { authAPI } from '../../services/authAPI';
+import { 
+    signIn,
+    signOut
+ } from '../../services/authAPI';
+
+const btnE1 = document.querySelector('.btnE1');
+btnE1.addEventListener('click', requeteIdentification);
 
 // Fonction pour la connexion
 // requete POST  pour verifier les credentials
@@ -7,7 +13,7 @@ function requeteIdentification() {
     var mdp = document.getElementById("motDePasse").value
     const data = {identifiant: identifiant, mdp: mdp } 
     
-    authAPI.signIn(data).then(res => {
+    signIn(data).then(res => {
         if (res.success) {    
             //window.location.href = '/index.html'; // redirectionnpm
             alert('success'); // faudra voir pour les cookies ou pour les login etc
