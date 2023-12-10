@@ -3,21 +3,14 @@ import {
     signOut
  } from '../../services/authAPI';
 
-const btnE1 = document.querySelector('.btnE1');
+const btnE1 = document.querySelector('.btn');
 btnE1.addEventListener('click', requeteIdentification);
 
-// Fonction pour la connexion
-// requete POST  pour verifier les credentials
-document.addEventListener('click', function(even){
-    if (even.target.id==='valider'){
-        requeteIdentification();
-    }
-});
 function requeteIdentification() {
 
-    alert("maman")
     var identifiant = document.getElementById("identifiant").value
     var mdp = document.getElementById("motDePasse").value
+    console.log(mdp)
     const data = {identifiant: identifiant, mdp: mdp } 
     
     signIn(data).then(res => {
