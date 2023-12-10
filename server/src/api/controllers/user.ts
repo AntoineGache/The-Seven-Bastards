@@ -2,14 +2,12 @@ import {NextFunction, Request, Response} from 'express';
 import { JWTUtils } from '../../core/utils/JWTUtils';
 import { CustomError } from '../utils/custom-error';
 import { BCryptUtils } from '../utils/Bcrypt';
-
-export const mysql = require('../../app');
+import { MySQL } from "../../core/database/MySQL";
 
 export type loginData = {
 	identifiant: string,
 	password: string
 }
-
 
 export const register = async (req: Request, res: Response, next: NextFunction) => {
 
@@ -21,6 +19,12 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
 export const login = async (req: Request, res: Response, next: NextFunction) => {
 
 	console.log(req.body)
+
+	let rows;
+	rows = await MySQL.instance.execute('select * from utilisateur')
+	console.log(rows)
+
+	res.status(201);
 
 	/*
 	let token: string
