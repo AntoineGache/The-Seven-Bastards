@@ -4,7 +4,6 @@ window.onload =function () {
     remplirLabel(document.getElementById('etat'), 'ETAT!');
     remplirLabel(document.getElementById('dateD'), '00/00/0000');
     remplirLabel(document.getElementById('dateF'), '00/00/0000');
-
 //donne de la bdd
     var donnees = [
         { nom: 'John', age: 30, ville: 'New York' },
@@ -14,10 +13,16 @@ window.onload =function () {
     creerTableau(donnees);
 }
 document.addEventListener('click', function(even){
-    if (even.target.id==='inscription'){
-        inscription();
+    if (even.target.id==='attribuer'){
+        attribuer();
     }
+    if (even.target.id==='voir'){
+        voir();
+    }
+
 });
+
+
 function listeConcours(elements){
     var listeContainer = document.getElementById("liste-container");
     var ul = document.createElement("ul");
@@ -33,7 +38,6 @@ function listeConcours(elements){
 function remplirLabel(label, nouvelleValeur) {
     label.textContent = nouvelleValeur;
 }
-
 
 
 function creerTableau(tableauDeValeur) {
@@ -56,10 +60,9 @@ function creerTableau(tableauDeValeur) {
     var participant = document.getElementById('participant');
     participant.appendChild(tableau);
 }
-
-function inscription() {
-    window.location.href = "../inscription/inscription.html";
-
+function attribuer(){
+    window.location.href = "../attribuer/attribuer.html";
 }
-
-
+function voir(){
+    window.location.href = "president.html";
+}

@@ -1,7 +1,7 @@
 @charset "ISO-8859-1";
 
 body {
-    background-image: url('../image/Wallpaper website v1.0.png');
+    background-image: url('../images/Wallpaper_website_v1.0.png');
     margin: 0;
     width: 100%;
     background-size: cover;
@@ -40,10 +40,8 @@ footer{
     width: 40%;
     height: 100%;
     float: left;
-
 }
 #imagefooter img{
-
     height: 100%;
     width: auto;
     margin-left: 4%;
@@ -53,6 +51,7 @@ footer p{
     font-size: 100%;
 }
 #imagefooter img{
+
     height: 100%;
     width: auto;
     margin-left: 4%;
