@@ -21,13 +21,8 @@ document.addEventListener('click', function(event) {
 
 function deposer(){
     let selectFile = document.getElementById("fileInput").files[0]
-    console.log(selectFile)
-    let data = new FormData();
-    data.append('file', selectFile)
 
-    console.log(data)
-
-    postImage(data).then(res => {
+    postImage({"file": selectFile.name}).then(res => {
         console.log(res.data)
     })
 }

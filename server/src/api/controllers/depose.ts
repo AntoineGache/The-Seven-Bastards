@@ -3,8 +3,7 @@ import { MySQL } from "../../core/database/MySQL";
 
 export const addImage = async (req: Request, res: Response, next: NextFunction) => {
 
-
-    console.log(req);
+    console.log(req.body.file);
 
     res.status(201).json({"Status": "ok"})
 
