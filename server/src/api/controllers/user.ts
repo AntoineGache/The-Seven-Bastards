@@ -18,19 +18,18 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
 
 export const login = async (req: Request, res: Response, next: NextFunction) => {
 
-	let rows = await MySQL.instance.execute(`select id from utilisateur where login= "${req.body.identifiant}" `)
+	 
+	let rows = await MySQL.instance.execute(`select id,password from utilisateur where login= "${req.body.identifiant}" `)
 	let dataRows = rows[0] as any[]
-
-	return res.json({'test': req.body}).status(201)
-
+	console.log(rows)
+	
 	if(dataRows.length==1){ // j'ai un utilisateur avec ce login
-
-		rows = await MySQL.instance.execute(`select password from utilisateur where login= "${req.body.identifiant}" `)
-
-		if(req.body.mdp == rows[0][0].password){
-			
-			rows = await MySQL.instance.execute(`select id from utilisateur where login= "${req.body.identifiant}" `)
-			const id = rows[0][0].id
+		
+		const pass = rows[0][0].password
+		const id=rows[0][0].id
+		console.log(id)
+		
+		if(req.body.mdp == pass){
 			
 			const reqRole = `SELECT role
 FROM (
@@ -64,50 +63,26 @@ WHERE id = ${id}
 ) AS roles
 								ORDER BY ord`
 			rows = await MySQL.instance.execute(reqRole)
-			
-			// interface pour vérifier les données
-			interface UserRole {
-				role: string;
+
+			  let str=''
+			  dataRows = rows[0] as any[]
+
+			  for(let i=0;i<dataRows.length;i++){
+				str+=rows[0][i].role+'/'
 			  }
 
-			// JSON converti en tableau
-			  const userRolesArray: UserRole[] = Object.entries(rows[0][0]).map(([role, value]) => ({
-				role,
-				value,  
-			  }));
-			  
-			  // JSON à transformer
-			  const originalRolesJSON: { [key: string]: boolean } = {
-				utilisateur: false,
-				competiteur: false,
-				president: false,
-				administrateur: false,
-				evaluateur: false,
-				directeur: false,
-			  };
-			  
-			  // Nouveau JSON avec les valeurs mises à jour
-			  const newRolesJSON: { [key: string]: boolean } = { ...originalRolesJSON };
-			  
-			  // Parcourir le tableau usersRoles et mettre à true les rôles correspondants dans le nouvel objet newRolesJSON
-			  userRolesArray.forEach((userRole) => {
-				if (newRolesJSON.hasOwnProperty(userRole.role)) {
-				  newRolesJSON[userRole.role] = true;
-				}
-			  });
-			
-			console.log(newRolesJSON);
-
-			return res.json(newRolesJSON).status(201)
+			  console.log(str)
+			return res.status(203).json({str})
 		}else{
-			return res.status(203)
+			console.log("pas le bon mot de passe")
+			return res.status(202)
 		}
 	}else{
-		return res.status(200)
+		console.log("pas d'intentifiant valide")
+		return res.status(201)
 	}
 }
 
 export const logout = async (req: Request, res: Response, next: NextFunction) => {
 	res.clearCookie('authToken').status(200).send();
 };
-

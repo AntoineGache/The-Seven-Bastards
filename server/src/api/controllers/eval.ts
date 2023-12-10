@@ -6,9 +6,8 @@ var mysql = require('../../app');
 export const recupConcours = async (req: Request, res: Response, next: NextFunction) =>{
 
     //Requête SQL
-    let rows;
-	rows = await MySQL.instance.execute('SELECT * FROM concours;')
-    return res.status().json(var soit {"rows": rows});
+	let cyprien = await MySQL.instance.execute('SELECT * FROM concours;')
+    return res.json({"rows": cyprien});
 
     //Traitement
     
