@@ -10,3 +10,10 @@ export const recupConcours = async (req: Request, res: Response, next: NextFunct
     //Traitement
     
 }
+
+export const evaluation = async (req: Request, res: Response, next: NextFunction) =>{
+
+    //Requête SQL
+    
+    //Traitement
+}
