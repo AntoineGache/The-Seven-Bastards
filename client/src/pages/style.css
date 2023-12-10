@@ -1,11 +1,7 @@
 @charset "ISO-8859-1";
 
 body {
-<<<<<<< HEAD
-    background-image: url('../image/Wallpaper_website_v1.0.png');
-=======
     background-image: url('../images/Wallpaper_website_v1.0.png');
->>>>>>> main
     margin: 0;
     width: 100%;
     background-size: cover;
@@ -19,7 +15,6 @@ header{
     margin: 0;
     position: absolute;
 }
-
 #logo{
     position: absolute;
     top: 20px;
@@ -45,7 +40,15 @@ footer{
     width: 40%;
     height: 100%;
     float: left;
-
+}
+#imagefooter img{
+    height: 100%;
+    width: auto;
+    margin-left: 4%;
+}
+footer p{
+    float: left;
+    font-size: 100%;
 }
 #imagefooter img{
 
