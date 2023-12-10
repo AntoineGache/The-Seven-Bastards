@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./page_template.js" type="module"></script>
+    <link href="main_page.css" type="text/css" rel="stylesheet"/>
+</head>
+<body>
+    <page-template>
+        <div slot="contenu">
+            <nav id = "contenueConcours">
+                <ul>
+                    <li class="menu-deroulant">
+                        <a href="#">menu      </a>
+                        <ul class="sous-menu">
+                            <div id="idConcours"></div>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+            <button id="inscription" onclick=toggleButton()><strong>inscription</strong></button>
+        </div>
+    </page-template>
+</body>
+</html>
