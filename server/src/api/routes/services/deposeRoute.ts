@@ -1,10 +1,9 @@
 import {Router} from 'express';
 import {
-    recupConcours,
-
-} from '../../controllers/eval';
+    addImage
+} from '../../controllers/depose';
 
 // Init router and path
 export const router = Router();
 
-router.get('/recupconcours', recupConcours);
+router.post('/addimage', addImage);

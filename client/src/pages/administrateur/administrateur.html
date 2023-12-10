@@ -21,7 +21,7 @@
           <p class="sloganL">D'ART</p>
         </div>
         <div id="profil">
-          <img src="../../image/User.png" />
+          <img src="../../images/User.png" />
 
           <div id="ecritureProfil">
             <h2>Info Profil</h2>
@@ -45,28 +45,6 @@
                 <button onclick="afficherConcours()">
                   Afficher les concours
                 </button>
-
-                <script>
-                  function afficherConcours() {
-                    fetch("/concours")
-                      .then((response) => response.json())
-                      .then((data) => {
-                        const resultContainer =
-                          document.getElementById("idConcours");
-                        resultContainer.innerHTML = JSON.stringify(
-                          data,
-                          null,
-                          2
-                        );
-                      })
-                      .catch((error) =>
-                        console.error(
-                          "Erreur lors de la récupération des données : ",
-                          error
-                        )
-                      );
-                  }
-                </script>
               </ul>
             </li>
           </ul>

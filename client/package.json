@@ -5,7 +5,7 @@
   "source": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npx parcel src/index.html src/pages/connexion/connexion.html src/pages/directeur/directeur.html src/pages/eval/eval.html src/pages/administrateur/administrateur.html src/pages/inscription/inscription.html src/pages/president/president.html src/pages/attribuer/attribuer.html",
+    "dev": "npx parcel src/index.html src/pages/connexion/connexion.html src/pages/directeur/directeur.html src/pages/eval/eval.html src/pages/administrateur/administrateur.html src/pages/inscription/inscription.html src/pages/president/president.html src/pages/attribuer/attribuer.html src/pages/depose/depose.html --no-cache",
     "build": "npx parcel build src/*.html"
   },
   "keywords": [],
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.2",
+    "form-data": "^4.0.0",
     "parcel": "^2.10.3",
     "typescript": "^5.3.2"
   },
