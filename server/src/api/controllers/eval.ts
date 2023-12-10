@@ -7,10 +7,17 @@ export const recupConcours = async (req: Request, res: Response, next: NextFunct
 
     //Requête SQL
 	let cyprien = await MySQL.instance.execute('SELECT * FROM concours;')
-    return res.json({"rows": cyprien});
 
-    //Traitement
+    let trans = cyprien[0] as any[]
+
+    let data: any = [];
+    for(let i = 0; i < trans.length; i++) {
+        if(trans[i].etat == "en cours") {
+            data.push(trans[i])
+        }
+    }
     
+    return res.json(data);
 }
 
 export const evaluation = async (req: Request, res: Response, next: NextFunction) =>{

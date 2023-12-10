@@ -57,13 +57,13 @@
     background: #716F65;
     position: absolute;
 }
-#contenueCentraleD{
+
+#contenueCentraleD {
+    position: absolute;
     top: 0;
     right: 0;
     margin-right: 5%;
-    height: 100%;
     width: 65%;
-    position: absolute;
-    color: white;
-
+    height: 100%;
+    background: #FAEFE6;
 }
