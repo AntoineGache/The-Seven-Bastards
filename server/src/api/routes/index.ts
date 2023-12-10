@@ -1,6 +1,6 @@
 import {NextFunction, Request, Response, Router} from 'express';
 import {router as authRouter} from '../routes/services/auth';
-import {router as evalRouter} from '../routes/services/eval';
+import {router as evalRouter} from './services/evalRoute';
 //Init router
 export const router = Router();
 
