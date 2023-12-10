@@ -1,5 +1,5 @@
 import {NextFunction, Request, Response, Router} from 'express';
-import {router as authRouter} from '../routes/services/auth';
+import {router as authRouter} from './services/authRoute';
 
 //Init router
 export const router = Router();
