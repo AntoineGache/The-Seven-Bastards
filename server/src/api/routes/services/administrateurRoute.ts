@@ -6,3 +6,4 @@ import { afficherConcours } from "../../controllers/administrateur";
 export const router = Router();
 
 router.get("/afficherConcours", afficherConcours);
+router.post("/creerUnConcours");
