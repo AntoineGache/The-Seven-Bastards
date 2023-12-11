@@ -15,7 +15,6 @@ header{
     margin: 0;
     position: absolute;
 }
-
 #logo{
     position: absolute;
     top: 20px;
@@ -41,7 +40,15 @@ footer{
     width: 40%;
     height: 100%;
     float: left;
-
+}
+#imagefooter img{
+    height: 100%;
+    width: auto;
+    margin-left: 4%;
+}
+footer p{
+    float: left;
+    font-size: 100%;
 }
 #imagefooter img{
 

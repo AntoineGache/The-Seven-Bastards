@@ -1,20 +1,15 @@
 import API from "./API";
 import {Cookies} from '../Utils/Cookies';
 
-export type SignInCredentials = {
-	identifiant: string,
-	password: string
-}
-
-export const signIn = async (credentials: SignInCredentials | null = null): Promise<string> => {
+export const signIn = async (credentials) => {
 	
 	const authToken = Cookies.get('authToken');
 	
 	if (credentials) {
-		return (await API.post('/auth/login', credentials))?.data?.token as string;
+		return (await API.post('/auth/login', credentials));
 	} else {
 		if (!authToken) throw new Error('No credentials provided and no authToken found in cookies');
-		return (await API.post('/auth/login'))?.data?.token as string;
+		return (await API.post('/auth/login'));
 	}
 };
 

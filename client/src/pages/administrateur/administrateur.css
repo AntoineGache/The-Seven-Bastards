@@ -1,0 +1,174 @@
+@charset "ISO-8859-1";
+
+#partieD {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 31%;
+  height: 100%;
+  background: transparent;
+}
+
+#profil {
+  float: left;
+  width: 65%;
+  height: 100%;
+  background: #36322e;
+}
+
+#profil img {
+  float: left;
+  width: auto;
+  height: 95%;
+  margin-left: 4%;
+}
+
+#ecritureProfil {
+  float: right;
+  text-align: right;
+  color: white;
+  padding-right: 15px;
+  padding-top: 10%;
+}
+
+#slogan {
+  float: left;
+  width: 32%;
+  height: 100%;
+  background: transparent;
+  text-align: right;
+  padding-right: 3%;
+  color: white;
+}
+
+#contenueCentrale {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  height: 65%;
+}
+
+#contenueCentraleG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100%;
+  background: #716f65;
+  text-align: center;
+}
+
+#CreerUnConcours {
+  margin-left: 10%;
+  margin-top: 1%;
+  font-size: 3cqb;
+  border: 5px solid #36322e;
+  color: #36322e;
+  background: transparent;
+  transition: background-color 0.3s;
+  box-shadow: 4px 4px #36322e;
+}
+
+#CreerUnConcours:active {
+  background-color: #c0c0c0;
+}
+
+#contenueCentraleD {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 5%;
+  width: 65%;
+  height: 100%;
+  background: #faefe6;
+}
+
+nav > ul:hover {
+  bottom: 0;
+  top: 0;
+  left: 0;
+  color: #36322e;
+  height: 100%;
+  width: 80%;
+  background-color: silver;
+  box-shadow: inset -2px -2px 3px #36322e, inset 2px 2px 3px #36322e;
+}
+
+nav > ul {
+  height: 20%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 5%;
+  font-size: 3cqb;
+  border: 5px solid #36322e;
+  box-shadow: 4px 4px #36322e;
+  color: #36322e;
+  background: transparent;
+  line-height: 80px;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  list-style-type: none;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  color: #36322e;
+  font-size: 3cqb;
+}
+
+.menu-deroulant > a:after {
+  content: ">";
+  font-size: 3cqb;
+  display: inline-block;
+}
+
+.menu-deroulant:hover > a:after {
+  animation: rotationFleche 0.2s linear forwards;
+}
+
+@keyframes apparitionSousMenu {
+  100% {
+    max-height: 50em;
+  }
+}
+
+@keyframes rotationFleche {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+nav > ul > li:hover > a {
+  color: black;
+}
+
+.menu-deroulant:hover > .sous-menu {
+  animation: apparitionSousMenu 1s forwards;
+}
+
+.sous-menu > a {
+  display: flex;
+  font-size: 3cqb;
+  align-items: center;
+}
+
+.sous-menu > a:hover {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: #716f65;
+  box-shadow: inset -2px -2px 3px silver, inset 2px 2px 3px #36322e;
+  color: #36322e;
+}
+
+.sous-menu {
+  overflow: hidden;
+  max-height: 0;
+  height: 1500px;
+  width: 100%;
+}

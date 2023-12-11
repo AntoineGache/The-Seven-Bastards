@@ -3,6 +3,10 @@ import cors from "cors";
 import cookieParser from 'cookie-parser';
 import { router } from "./api/routes";
 import dotenv from 'dotenv';
+import { MySQL } from "./core/database/MySQL";
+
+MySQL.connect().then(_ => console.log('Connected to the MySQL database !')
+).catch((err: Error) => console.log(`Error while connecting to the MySQL database : ${err.message}`));
 
 const app = express();
 dotenv.config();
@@ -15,29 +19,6 @@ app.use(express.urlencoded({extended: false}));
 
 app.use("/", router);
 
-// Here database connexion !!!
-const mysql = require('mysql2');
-
-try {
-      const connexion = mysql.createConnection({
-        host: `${process.env.MYSQL_HOST}`,
-        user: `${process.env.MYSQL_USER}`,
-        password: `${process.env.MYSQL_PASSWORD}`,
-        database: `${process.env.MYSQL_DATABASE}`,
-        port: `${process.env.MYSQL_PORT}`
-      })
-      
-      connexion.connect(function(err: any) {
-        if (err) throw err;
-        console.log("Data base: Connexion Success !")
-      });
-
-      module.exports = connexion;
-
-      app.listen(process.env.BACK_PORT, () => {
-        console.log("server running : http://localhost:8080");
-      });
-} catch(err) {
-    console.log("Data base: Connexion Error !")
-    console.log(err)
-}
+app.listen(process.env.BACK_PORT, () => {
+  console.log("server running : http://localhost:8080");
+});
