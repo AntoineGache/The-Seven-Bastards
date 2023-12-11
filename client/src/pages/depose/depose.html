@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="attribuer.css" type="text/css" rel="stylesheet"/>
+    <link href="depose.css" type="text/css" rel="stylesheet"/>
     <link href="../style.css" type="text/css" rel="stylesheet"/>
-    <script type="module" src="attribuer.js" defer></script>
-    <title>attribuer</title>
+    <script type="module" src="depose.js" defer></script>
+    <title>deposé</title>
 </head>
 <body>
 <header>
@@ -14,7 +14,7 @@
         <img src="../../images/LogoSite.png">
     </div>
     <div id="titre">
-        <h1>ATTRIBUTION DES MEMBRES DU JURY</h1>
+        <h1>DEPOT DES PRODUCTIONS</h1>
     </div>
 
     <div id="partieD">
@@ -28,18 +28,22 @@
             <img src="../../images/User.png">
             <div id="ecritureProfil">
                 <h2>Info Profil</h2>
-                <h2><strong>ATTRIBUER</strong></h2>
+                <h2><strong>DEPOSER</strong></h2>
             </div>
         </div>
     </div>
 </header>
 
 <div id="Centrale">
+    <div id="top">
+        <h3 id="zone">ZONE DE DEPOT :</h3> <h3 id="oeuvre">OEUVRE(S) QUE VOUS AVIEZ DEJA DEPOSE</h3>
+    </div>
+    <div id="center">
+        <div id="gauche" class="detection"><input type="file" name="recFile" id="fileInput"><h3 class="detection">CLIQUER POUR DEPOSER</h3></div>
+        <div id="centre"><button class="btn" id="deposer" ><strong class="btn">Déposer</strong></button></div>
+        <div id="droite"></div>
+    </div>
 
-    <div id="gauche"></div>
-    <img src="../../images/fleche.png">
-    <div id="droite"></div>
-    <button class="button" id="attribuer" ><strong>Attribuer</strong></button>
 </div>
 
 <footer>

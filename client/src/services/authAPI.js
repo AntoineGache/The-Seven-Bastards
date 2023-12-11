@@ -6,10 +6,10 @@ export const signIn = async (credentials) => {
 	const authToken = Cookies.get('authToken');
 	
 	if (credentials) {
-		return (await API.post('/auth/login', credentials))?.data?.token;
+		return (await API.post('/auth/login', credentials));
 	} else {
 		if (!authToken) throw new Error('No credentials provided and no authToken found in cookies');
-		return (await API.post('/auth/login'))?.data?.token;
+		return (await API.post('/auth/login'));
 	}
 };
 

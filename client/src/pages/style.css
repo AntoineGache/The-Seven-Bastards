@@ -1,11 +1,11 @@
 @charset "ISO-8859-1";
 
 body {
-  background-image: url("../images/Wallpaper_website_v1.0.png");
-  margin: 0;
-  width: 100%;
-  background-size: cover;
-  height: auto;
+    background-image: url('../images/Wallpaper_website_v1.0.png');
+    margin: 0;
+    width: 100%;
+    background-size: cover;
+    height: auto;
 }
 header {
   left: 0px;
@@ -16,10 +16,10 @@ header {
   position: absolute;
 }
 
-#logo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+#logo{
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }
 #logo img {
   width: 30%;
@@ -35,12 +35,21 @@ footer {
   padding-bottom: 1%;
   backdrop-filter: blur(10px);
 }
-#imagefooter {
-  margin-top: 0.5%;
-  text-align: left;
-  width: 40%;
-  height: 100%;
-  float: left;
+#imagefooter{
+    margin-top: 0.5%;
+    text-align: left;
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+#imagefooter img{
+    height: 100%;
+    width: auto;
+    margin-left: 4%;
+}
+footer p{
+    float: left;
+    font-size: 100%;
 }
 #imagefooter img {
   height: 100%;

@@ -1,9 +1,10 @@
 import { isUtf8 } from "buffer";
 import API from "../../services/API";
+import afficherConcoursID from "../../services/administrateurAPI";
 //Récupération des données sous le format json
 
-export const afficherConcoursID = async () => {
-  await API.get("/afficherConcours")
+export const afficherConcours = async () => {
+  await API.get("/admin/afficherConcours")
     .then((response) => {
       let containerGauche = document.getElementById("idConcours");
 

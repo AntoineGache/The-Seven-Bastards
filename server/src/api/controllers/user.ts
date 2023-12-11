@@ -18,63 +18,71 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
 
 export const login = async (req: Request, res: Response, next: NextFunction) => {
 
-	console.log(req.body)
-
-	let rows;
-	rows = await MySQL.instance.execute('select * from utilisateur')
+	 
+	let rows = await MySQL.instance.execute(`select id,password from utilisateur where login= "${req.body.identifiant}" `)
+	let dataRows = rows[0] as any[]
 	console.log(rows)
-
-	res.status(201);
-
-	/*
-	let token: string
-	//let token :string = req.header.authorization?.split(' ')[1];
-
-	let user = null
-
-	try {
-
-		if(token) {
-			const decoded = JWTUtils.decode(token);
-			const identifiant = decoded['identifiant'];
-
-			user = 0 //requête SQL avec identiifant dans la requête
+	
+	if(dataRows.length==1){ // j'ai un utilisateur avec ce login
+		
+		const pass = rows[0][0].password
+		const id=rows[0][0].id
+		console.log(id)
+		
+		if(req.body.mdp == pass){
 			
-			if(!user) {
-				next(new CustomError('User not found', 404));
-			}
+			const reqRole = `SELECT role
+FROM (
+SELECT 'competiteur' AS role, 1 AS ord
+FROM competiteur
+WHERE id = ${id}
+UNION ALL
+SELECT 'president', 2
+FROM president
+WHERE id = ${id}
+UNION ALL
+SELECT 'administrateur', 3
+FROM administrateur
+WHERE id = ${id}
+UNION ALL
+SELECT 'directeur', 4
+FROM directeur
+WHERE id = ${id}
+UNION ALL
+SELECT 'evaluateur', 5
+FROM evaluateur
+WHERE id = ${id}
+UNION ALL
+SELECT 'jury', 6
+FROM jury
+WHERE id = ${id}
+UNION ALL
+SELECT 'utilisateur', 7
+FROM utilisateur
+WHERE id = ${id}
+) AS roles
+								ORDER BY ord`
+			rows = await MySQL.instance.execute(reqRole)
 
+			  let str=''
+			  dataRows = rows[0] as any[]
+
+			  for(let i=0;i<dataRows.length;i++){
+				str+=rows[0][i].role+'/'
+			  }
+
+			  console.log(str)
+			return res.status(203).json({str})
+		}else{
+			console.log("pas le bon mot de passe")
+			return res.status(202)
 		}
-		else {
-			//Cas ou il n'y a pas de cookie
-			
-			//refaire une requête sql
-
-			//Utiliser Bcrypt pour comparer le password
-
-		}
-
-		if(user) {
-			const dataAccessToken = {
-				"identifiant": user, //Modif pour ajouter l'identifiant du user user.identifiant un truc du genre
-				"roles": user
-			}
-
-			const authToken = JWTUtils.generateToken(dataAccessToken, {expiresIn: '7d'});
-			
-			res.status(201).json({authToken})
-		}
-	} catch (error) {
-		next(error)
+	}else{
+		console.log("pas d'intentifiant valide")
+		return res.status(201)
 	}
-
-	*/
-	//requête SQL
-	// Traitement 
-
 }
 
 export const logout = async (req: Request, res: Response, next: NextFunction) => {
 	res.clearCookie('authToken').status(200).send();
 };
-
