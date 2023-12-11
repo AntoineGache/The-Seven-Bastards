@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="administrateur.css" type="text/css" rel="stylesheet" />
     <link href="../style.css" type="text/css" rel="stylesheet" />
+    <script type="module" src="administrateur.js"></script>
     <title>acceuil adminitrateur</title>
   </head>
   <body>
@@ -36,19 +37,40 @@
       </div>
       <div id="contenueCentraleD">
         <nav id="contenueConcours">
+          <div id="idConcours"></div>
           <ul>
             <li class="menu-deroulant">
               <a href="#">menu </a>
-              <ul class="sous-menu">
-                <div id="idConcours"></div>
-              </ul>
+              <ul class="sous-menu"></ul>
             </li>
           </ul>
         </nav>
 
-        <button id="CreerUnConcours" onclick="toggleButton()">
-          <strong>Creer un concours</strong>
-        </button>
+        <form>
+          <label for="theme">Thème :</label>
+          <input type="text" id="theme" name="theme" required><br>
+     
+          <label for="description">Description :</label>
+          <textarea id="description" name="description" required></textarea><br>
+     
+          <label for="dateDebut">Date de Début :</label>
+          <input type="date" id="dateDebut" name="dateDebut" required><br>
+     
+          <label for="dateFin">Date de Fin :</label>
+          <input type="date" id="dateFin" name="dateFin" required><br>
+     
+          <label for="etat">État :</label>
+          <select id="etat" name="etat" required>
+              <option value="en cours">En Cours</option>
+              <option value="évalué">Évalué</option>
+              <option value="non commencé">Non Commencé</option>
+          </select><br>
+     
+          <label for="president">ID du Président :</label>
+          <input type="number" id="president" name="president" required><br>
+     
+          <input type="submit" value="Créer Concours"> </input>
+      </form>
       </div>
     </div>
     <footer>
@@ -63,6 +85,5 @@
       <p>The 7 bastards © Art Contests Creators</p>
       <p></p>
     </footer>
-    <script type="module" src="administrateur.js"></script>
   </body>
 </html>

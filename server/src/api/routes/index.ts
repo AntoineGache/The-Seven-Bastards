@@ -1,5 +1,6 @@
-import {NextFunction, Request, Response, Router} from 'express';
-import {router as authRouter} from './services/authRoute';
+import { NextFunction, Request, Response, Router } from "express";
+import { router as authRouter } from "./services/authRoute";
+import { router as adminRouther } from "../routes/services/administrateurRoute";
 
 //Init router
 export const router = Router();
@@ -8,14 +9,16 @@ export const router = Router();
  * Services routes
  */
 
-router.use('/auth', authRouter);
-
+router.use("/auth", authRouter);
+router.use("/admin", adminRouther);
 
 /**
  * default route
  */
-router.use('/', (req: Request, res: Response, next: NextFunction) => {
-    res.json({
-        message: 'You\'re in the right place ! 🧐'
-    }).status(200);
+router.use("/", (req: Request, res: Response, next: NextFunction) => {
+  res
+    .json({
+      message: "You're in the right place ! 🧐",
+    })
+    .status(200);
 });
