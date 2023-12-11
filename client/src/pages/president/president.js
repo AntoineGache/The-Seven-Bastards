@@ -16,9 +16,6 @@ document.addEventListener('click', function(even){
     if (even.target.id==='attribuer'){
         attribuer();
     }
-    if (even.target.id==='voir'){
-        voir();
-    }
 
 });
 
@@ -62,7 +59,4 @@ function creerTableau(tableauDeValeur) {
 }
 function attribuer(){
     window.location.href = "../attribuer/attribuer.html";
-}
-function voir(){
-    window.location.href = "president.html";
 }
