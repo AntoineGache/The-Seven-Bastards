@@ -1,6 +1,10 @@
-var elements = ["Élément 1", "Élément 2", "Élément 3", "Élément 4", "Élément 5"]; //a remplacer et mettre
-var elements2 = ["Élément1", "Élément 2", "Élément 3", "Élément 4", "Élément 5"]; //a remplacer et mettre
-remplirFormulaireJury(elements, elements2);
+import {
+    getConcours,
+    addCompetiteur
+} from '../../services/attribuer'
+
+var toAdd = ["Élément 1", "Élément 2", "Élément 3", "Élément 4", "Élément 5"]; //a remplacer et mettre
+var added = ["Élément1", "Élément 2", "Élément 3", "Élément 4", "Élément 5"]; //a remplacer et mettre
 
 document.addEventListener('click', function(event) {
     if (event.target.tagName === 'P') {
@@ -11,29 +15,34 @@ document.addEventListener('click', function(event) {
     }
 });
 
+window.onload = remplirFormulaireJury(toAdd, added);
+
 function attribuer(){
     window.location.href = "../president/president.html";
 }
 
 
-function remplirFormulaireJury(elements, elements2){
+function remplirFormulaireJury(toAdd, added){
+
+    const users = []
+
     var listeContainer = document.getElementById("gauche");
     var p;
-    for (var i = 0; i < elements.length; i++) {
+    for (var i = 0; i < toAdd.length; i++) {
         p = document.createElement("p");
         p.id = i;
         p.className="g"
-        p.textContent = elements[i];
+        p.textContent = toAdd[i];
         listeContainer.appendChild(p);
 
     }
 
     listeContainer = document.getElementById("droite");
-    for (var i = 0; i < elements2.length; i++) {
+    for (var i = 0; i < added.length; i++) {
         p = document.createElement("p");
         p.className="d"
         p.id =i;
-        p.textContent = elements2[i];
+        p.textContent = added[i];
         listeContainer.appendChild(p);
     }
 }
