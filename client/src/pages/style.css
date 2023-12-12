@@ -7,32 +7,33 @@ body {
     background-size: cover;
     height: auto;
 }
-header{
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 20%;
-    margin: 0;
-    position: absolute;
+header {
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 20%;
+  margin: 0;
+  position: absolute;
 }
+
 #logo{
     position: absolute;
     top: 20px;
     left: 20px;
 }
 #logo img {
-    width: 30%;
-    height: auto;
+  width: 30%;
+  height: auto;
 }
-footer{
-    width: 100%;
-    height: 6%;
-    bottom: 0;
-    color: white;
-    text-align: center;
-    position: fixed;
-    padding-bottom: 1%;
-    backdrop-filter: blur(10px);
+footer {
+  width: 100%;
+  height: 6%;
+  bottom: 0;
+  color: white;
+  text-align: center;
+  position: fixed;
+  padding-bottom: 1%;
+  backdrop-filter: blur(10px);
 }
 #imagefooter{
     margin-top: 0.5%;
@@ -50,13 +51,12 @@ footer p{
     float: left;
     font-size: 100%;
 }
-#imagefooter img{
-
-    height: 100%;
-    width: auto;
-    margin-left: 4%;
+#imagefooter img {
+  height: 100%;
+  width: auto;
+  margin-left: 4%;
 }
-footer p{
-    float: left;
-    font-size: 100%;
+footer p {
+  float: left;
+  font-size: 100%;
 }
