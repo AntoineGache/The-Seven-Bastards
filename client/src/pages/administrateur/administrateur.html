@@ -36,41 +36,44 @@
         <label>"concours a venir"</label>
         <div id="idConcours"></div>
       </div>
+      
       <div id="contenueCentraleD">
-        <ul>
-          <li class="menu-deroulant">
-            <a href="#">menu </a>
-            <ul class="sous-menu">
-              <nav id="contenueConcours"></nav>
-            </ul>
-          </li>
-        </ul>
-        <form>
-          <label for="theme">Thème :</label>
-          <input type="text" id="theme" name="theme" required /><br />
+        <nav id="contenueConcours">
+          <ul>
+            <li class="menu-deroulant">
+              <a href="#">menu </a>
+              <ul class="sous-menu">
+                <div id="contenueConcours"></div>
+              </ul>
+            </li>
+          </ul>
+        </nav>
 
-          <label for="description">Description :</label>
-          <textarea id="description" name="description" required></textarea
-          ><br />
-
-          <label for="dateDebut">Date de Début :</label>
-          <input type="date" id="dateDebut" name="dateDebut" required /><br />
-
-          <label for="dateFin">Date de Fin :</label>
-          <input type="date" id="dateFin" name="dateFin" required /><br />
-
-          <label for="etat">État :</label>
+        <div>
+          <label>Thème :</label>
+          <input type="text" id="theme" name="theme" required><br>
+      
+          <label>Description :</label>
+          <textarea id="description" name="description" required></textarea><br>
+      
+          <label>Date de Début :</label>
+          <input type="date" id="dateDebut" name="dateDebut" required><br>
+      
+          <label>Date de Fin :</label>
+          <input type="date" id="dateFin" name="dateFin" required><br>
+      
+          <label>État :</label>
           <select id="etat" name="etat" required>
-            <option value="en cours">En Cours</option>
-            <option value="évalué">Évalué</option>
-            <option value="non commencé">Non Commencé</option></select
-          ><br />
-
-          <label for="president">ID du Président :</label>
-          <input type="number" id="president" name="president" required /><br />
-
-          <input type="submit" value="Créer Concours" /> <br />
-        </form>
+              <option value="en cours">En Cours</option>
+              <option value="évalué">Évalué</option>
+              <option value="non commencé">Non Commencé</option>
+          </select><br>
+      
+          <label>ID du Président :</label>
+          <input type="number" id="president" name="president" required><br>
+      
+          <button class="CreerUnConcours" value="Créer Concours"> Créer un concours</button>
+        </div>
       </div>
     </div>
     <footer>
@@ -78,9 +81,7 @@
         <img src="../../images/logo_X_transparent_background.png" />
         <img src="../../images/logo_instagram_transparent_background.png" />
         <img src="../../images/logo_linkedin_transparent_background.png" />
-        <img
-          src="../../images/logo_facebook_blanc_transparent_background.png"
-        />
+        <img src="../../images/logo_facebook_blanc_transparent_background.png" />
       </div>
       <p>The 7 bastards © Art Contests Creators</p>
       <p></p>

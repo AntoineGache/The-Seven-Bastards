@@ -1,8 +1,8 @@
-#CREATE DATABASE sevenBastards;
+CREATE DATABASE sevenBastards;
 
-#DROP USER 'user'@'localhost';
-#CREATE USER 'user'@'localhost' IDENTIFIED BY 'root';
-#GRANT ALL PRIVILEGES ON sevenBastards.* TO 'user'@'localhost' WITH GRANT OPTION;
+DROP USER 'user'@'localhost';
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'root';
+GRANT ALL PRIVILEGES ON sevenBastards.* TO 'user'@'localhost' WITH GRANT OPTION;
 
 use sevenBastards;
 

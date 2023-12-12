@@ -17,7 +17,6 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
 }
 
 export const login = async (req: Request, res: Response, next: NextFunction) => {
-
 	 
 	let rows = await MySQL.instance.execute(`select id,password from utilisateur where login= "${req.body.identifiant}" `)
 	let dataRows = rows[0] as any[]
@@ -32,36 +31,37 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
 		if(req.body.mdp == pass){
 			
 			const reqRole = `SELECT role
-FROM (
-SELECT 'competiteur' AS role, 1 AS ord
-FROM competiteur
-WHERE id = ${id}
-UNION ALL
-SELECT 'president', 2
-FROM president
-WHERE id = ${id}
-UNION ALL
-SELECT 'administrateur', 3
-FROM administrateur
-WHERE id = ${id}
-UNION ALL
-SELECT 'directeur', 4
-FROM directeur
-WHERE id = ${id}
-UNION ALL
-SELECT 'evaluateur', 5
-FROM evaluateur
-WHERE id = ${id}
-UNION ALL
-SELECT 'jury', 6
-FROM jury
-WHERE id = ${id}
-UNION ALL
-SELECT 'utilisateur', 7
-FROM utilisateur
-WHERE id = ${id}
-) AS roles
+							FROM (
+							SELECT 'competiteur' AS role, 1 AS ord
+							FROM competiteur
+							WHERE id = ${id}
+							UNION ALL
+							SELECT 'president', 2
+							FROM president
+							WHERE id = ${id}
+							UNION ALL
+							SELECT 'administrateur', 3
+							FROM administrateur
+							WHERE id = ${id}
+							UNION ALL
+							SELECT 'directeur', 4
+							FROM directeur
+							WHERE id = ${id}
+							UNION ALL
+							SELECT 'evaluateur', 5
+							FROM evaluateur
+							WHERE id = ${id}
+							UNION ALL
+							SELECT 'jury', 6
+							FROM jury
+							WHERE id = ${id}
+							UNION ALL
+							SELECT 'utilisateur', 7
+							FROM utilisateur
+							WHERE id = ${id}
+							) AS roles
 								ORDER BY ord`
+
 			rows = await MySQL.instance.execute(reqRole)
 
 			  let str=''

@@ -4,7 +4,7 @@ import {
     signOut
  } from '../../services/authAPI';
 
-const btnE1 = document.querySelector('.btnE1');
+const btnE1 = document.querySelector('.btn');
 btnE1.addEventListener('click', requeteIdentification);
 
 // Fonction pour la connexion
