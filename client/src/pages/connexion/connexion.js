@@ -13,23 +13,31 @@ function requeteIdentification() {
     var identifiant = document.getElementById("identifiant").value
     var mdp = document.getElementById("motDePasse").value
     const data = {identifiant: identifiant, mdp: mdp } 
-    console.log("envoie")
     signIn(data).then(res => {
-        console.log("reponse recue")
-        
         if (res.status == 203) {    
-            //window.location.href = '/index.html'; // redirectionnpm
-            
-            console.log(res.data)      
             document.cookie = `role = ${res.data.str}`
-            alert('success'); // faudra voir pour les cookies ou pour les login etc
-         } else if (res.status== 201) {
+            
+            if(res.data.str.includes('directeur')){
+                window.location.href = '../directeur/directeur.html'
+            }else if(res.data.str.includes('president')){
+                window.location.href = '../president/president.html'
+            }else if(res.data.str.includes('administrateur')){
+                window.location.href = '../president/administrateur.html'
+            }else if(res.data.str.includes('competiteur')){
+                window.location.href = '../depose/depose.html'
+            }else{
+                window.location.href = '../eval/eval.html'
+            }    
+               
+         } else if (res.status == 201) {
             alert('Identifiant incorrect.');
-         }else if (res.status== 202) {
-            alert('mdp incorrect.');
+         }else if (res.status == 202) {
+            alert('Mot de passe incorrect.');
          }
     });
 }
+
+
 function affichermotdepasse() {
     var texte = document.getElementById("motDePasse").value
 }

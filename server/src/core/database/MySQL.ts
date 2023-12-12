@@ -8,9 +8,9 @@ export namespace MySQL {
     instance = await mysql.createConnection({
       host: "localhost",
       user: "root",
-      password: "",
+      password: "root_password",
       database: "sevenBastards",
-      port: 3306,
+      port: 6000,
     });
   };
 }

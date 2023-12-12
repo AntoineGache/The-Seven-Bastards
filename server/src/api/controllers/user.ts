@@ -3,6 +3,7 @@ import { JWTUtils } from '../../core/utils/JWTUtils';
 import { CustomError } from '../utils/custom-error';
 import { BCryptUtils } from '../utils/Bcrypt';
 import { MySQL } from "../../core/database/MySQL";
+import { json } from 'stream/consumers';
 
 export type loginData = {
 	identifiant: string,
@@ -17,16 +18,15 @@ export const register = async (req: Request, res: Response, next: NextFunction) 
 }
 
 export const login = async (req: Request, res: Response, next: NextFunction) => {
-	 
+
 	let rows = await MySQL.instance.execute(`select id,password from utilisateur where login= "${req.body.identifiant}" `)
+
 	let dataRows = rows[0] as any[]
-	console.log(rows)
 	
 	if(dataRows.length==1){ // j'ai un utilisateur avec ce login
 		
 		const pass = rows[0][0].password
 		const id=rows[0][0].id
-		console.log(id)
 		
 		if(req.body.mdp == pass){
 			
@@ -75,11 +75,11 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
 			return res.status(203).json({str})
 		}else{
 			console.log("pas le bon mot de passe")
-			return res.status(202)
+			return res.status(202).json({message: "pas le bon mot de passe"})
 		}
 	}else{
 		console.log("pas d'intentifiant valide")
-		return res.status(201)
+		return res.status(201).json({message: "pas d'intentifiant valide"})
 	}
 }
 
